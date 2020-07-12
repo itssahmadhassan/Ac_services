@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Order(models.Model):
-    name = models.CharField(max_length=50, default='', blank=True, null=True)
+    name = models.CharField(max_length=50,)
     phone = models.CharField(max_length=50, default='', blank=True, null=True)
 
     mail = models.EmailField(max_length=50, default='', blank=True, null=True)
