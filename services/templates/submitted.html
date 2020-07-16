@@ -313,6 +313,7 @@
                                 <div name="location" class="col-2 col-3-small" style="font-size:30px;">
                                     <a name="location" onclick="getLocation()" style="color:#ccc;">
                                         <i class="fa fa-street-view" aria-hidden="true"></i>
+
                                     </a>
 
                                 </div>
@@ -325,6 +326,7 @@
                                 <div class="col-6">
                                     <textarea name="address" id="address" placeholder="Address" required
                                               rows="2"></textarea>
+                                    <p id="demo" name="map" style="font-size:10px"></p>
                                 </div>
                                 <div class="col-12">
                                     <ul class="actions">
@@ -481,27 +483,9 @@ function showPosition(position) {
   "<br>Longitude: " + position.coords.longitude;
 }
 
-
 <!--/////      function for alert ///-->
-function loadImage() {
-  alert("Image is loaded");
-}
 
 swal("Congradulation !", "Your order submitted successfully!", "success");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </script>
 </body>
