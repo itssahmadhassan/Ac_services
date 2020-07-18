@@ -1,0 +1,46 @@
+{% extends "admin/base.html" %}
+{% load static %}
+{% block title %}{{ title }} | Ac-services{% endblock %}
+<link rel="stylesheet" href="{% url 'css/main.css' %}"/>
+{% block extrastyle %}
+<style>
+
+    #header {
+    background-color:#353535;
+
+
+}
+    body {
+
+}
+h1 {
+    text-color: white;
+}
+.module caption{
+    background-color:#353535;
+}
+#content-related .module h2,input[type=submit] {
+    background-color:#353535;
+    color:white;
+}
+
+tbody {
+
+}
+
+
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+        <img src="{% static 'images/logo.png' %}" class="img-responsive" alt="logo-brand" style=" max-height:48px; max-width:auto;">
+        AC-Services Admin Portal</a></h1>
+
+
+
+{% endblock %}
+
+
+{% block nav-global %}{% endblock %}

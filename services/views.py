@@ -23,7 +23,7 @@ def submitted(request):
     text = {'name': name, 'phone': phone, 'mail': mail,
             'location': location, 'address': address,
             'message': message}
-    # print("location = " + location)
+
     # /////     to convert dictionary to string /////
 
     result = json.dumps(text)
@@ -35,27 +35,31 @@ def submitted(request):
                                     address=address, )
 
         # /////   to send message to wats_app using twilio.com  /////
+        try:
+            account_sid = ''
+            auth_token = ''
+            client = Client(account_sid, auth_token)
 
-        account_sid = 'ACc1a005ae0740a9e4677d4ce2a37112bc'
-        auth_token = 'c93d6fda7a0b442849ffce2ee2e3b71c'
-        client = Client(account_sid, auth_token)
-
-        message = client.messages.create(
-            from_='whatsapp:+14155238886',
-            body=notification,
-            to='whatsapp:+923474523358'
-        )
+            message = client.messages.create(
+                from_='whatsapp:+14155238886',
+                body=notification,
+                to='whatsapp:+923474523358'
+            )
+        except:
+            pass
 
         # ////////     to send text message ///////
-        
-        account_sid = 'ACc1a005ae0740a9e4677d4ce2a37112bc'
-        auth_token = 'c93d6fda7a0b442849ffce2ee2e3b71c'
-        client = Client(account_sid, auth_token)
+        try:
+            account_sid = ''
+            auth_token = ''
+            client = Client(account_sid, auth_token)
 
-        sms = client.messages.create(
-            from_='+12057368797',
-            body=notification,
-            to='+923114006992'
-        )
+            sms = client.messages.create(
+                from_='+12057368797',
+                body=notification,
+                to='+923114006992'
+            )
+        except:
+            pass
 
     return render(request, "submitted.html")
