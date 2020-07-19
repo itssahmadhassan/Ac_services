@@ -5,14 +5,16 @@
 {% block extrastyle %}
 <style>
 
-    #header {
+#header {
     background-color:#353535;
-
-
 }
-    body {
 
+
+
+div.breadcrumbs {
+    background-color:grey;
 }
+
 h1 {
     text-color: white;
 }
@@ -29,15 +31,16 @@ tbody {
 }
 
 
+
 </style>
 {% endblock %}
 
 {% block branding %}
 <h1 id="site-name">
     <a href="{% url 'admin:index' %}">
-        <img src="{% static 'images/logo.png' %}" class="img-responsive" alt="logo-brand" style=" max-height:48px; max-width:auto;">
+        <img src="{% static 'images/logo.png' %}" class="img-responsive" alt="logo-brand"
+             style=" max-height:48px; max-width:auto;">
         AC-Services Admin Portal</a></h1>
-
 
 
 {% endblock %}
